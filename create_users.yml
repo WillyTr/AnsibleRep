@@ -71,9 +71,9 @@
        test_files: ../jsnapy/tests/test2.yml
       register: test_check_2
 
-    - name: Debug jsnapy
-      debug: 
-      msg: "{{ test_check_2 }}"      
+     - name: Debug jsnapy
+       debug: 
+       msg: "{{ test_check_2 }}"      
 
 
   vars_files: 
