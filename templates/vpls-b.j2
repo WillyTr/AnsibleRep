@@ -19,7 +19,7 @@ routing-instances {
                 mesh-group ldp-{{RI.ID}} {
                     local-switching;
                     {% for lo0 in loopbacks_nodos_c %}
-                    neighbor lo0.loopb;
+                    neighbor {{lo0.loopb}};
                     {% endfor %}
                 }
             }
