@@ -3,15 +3,15 @@ instancias:
  - 
    name: vpls-node-b-1
    loopback: 3.3.3.3
-   ID:10
+   ID: 10
  - 
    name: vpls-node-b-2
    loopback: 6.6.6.6
-   ID:20
+   ID: 20
  - 
    name: vpls-node-b-3
    loopback: 4.4.4.4
-   ID:30
+   ID: 30
 
 
 loopbacks_nodos_C:
