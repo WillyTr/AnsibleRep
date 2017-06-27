@@ -15,10 +15,10 @@
       junos_jsnapy: 
         action: snap_pre
         host: "{{ inventory_hostname }}"
+        user: "{{ credentials.username }}"
         passwd: "{{ credentials.password }}"
         test_files: ../jsnapy/tests/test1.yml
-        user: "{{ credentials.username }}"
-      name: "Collect Pre Snapshot"
+       name: "Collect Pre Snapshot"
 
     -
       junos_config:
