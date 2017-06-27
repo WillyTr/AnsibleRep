@@ -62,17 +62,17 @@
     #     validate_certs: yes
       # when: test_check.passPercentage != 100
 
-   - name: Check Users
-     junos_jsnapy:
+    - name: Check Users
+      junos_jsnapy:
        host: "{{ inventory_hostname }}"
        user: "{{ credentials.username }}"
        passwd: "{{ credentials.password }}"
        action: "snapcheck"
        test_files: ../jsnapy/tests/test2.yml
-     register: test_check_2
+      register: test_check_2
 
-   - name: Debug jsnapy
-     debug: 
+    - name: Debug jsnapy
+      debug: 
       msg: "{{ test_check_2 }}"      
 
 
