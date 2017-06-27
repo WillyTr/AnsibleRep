@@ -1,8 +1,14 @@
-        user mlemos {
-            full-name "Matias Lemos";
-            uid 2001;
-            class read-only;
+system {
+    login {
+    { % for user in users % }
+        user {{user.name}} {
+            full-name {{user.full_name}};
+            uid {{user.uid}};
+            class {{user.class}};
             authentication {
-                encrypted-password "$6$AN1fFn1q$63bOZD6NG0bDfOhrBXfLIoJIwNEWEE4iaZHRNnO24uHm0ZTTOJz/B4EHIXowL.sshC5OhA/mQltz1.X/xL/L0/"; ## SECRET-DATA
+                encrypted-password "{{user.password}}"; ## SECRET-DATA
             }
         }
+     {% endfor%}
+     }
+}
