@@ -16,8 +16,8 @@ instancias:
 
 loopbacks_nodos_c:
  - 
-    lo0: 8.8.8.8
+    loopb: 8.8.8.8
  - 
-    lo0: 9.9.9.9
+    loopb: 9.9.9.9
  - 
-    lo0: 5.5.5.5
+    loopb: 5.5.5.5
