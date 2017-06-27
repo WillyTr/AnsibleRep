@@ -1,0 +1,5 @@
+[node-c-all]
+Nodo-C1 junos_host=12.13.14.1
+
+[node-c1]
+Nodo-C1 junos_host=12.13.14.1
