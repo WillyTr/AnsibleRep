@@ -2,7 +2,7 @@
 - 
   connection: local
   gather_facts: false
-  hosts: all
+  hosts: nodos-c
   roles:
   - Juniper.junos
 
@@ -11,14 +11,14 @@
     - 
       template: "src='templates/users.j2' dest='files/{{inventory_hostname}}_users.conf'"
 
- #   - 
- #     junos_jsnapy: 
- #       action: snap_pre
- #       host: "{{ inventory_hostname }}"
- #       passwd: "{{ credentials.password }}"
- #       test_files: ../jsnapy/tests/test1.yml
- #       user: "{{ credentials.username }}"
- #     name: "Collect Pre Snapshot"
+    - 
+      junos_jsnapy: 
+        action: snap_pre
+        host: "{{ inventory_hostname }}"
+        passwd: "{{ credentials.password }}"
+        test_files: ../jsnapy/tests/test1.yml
+        user: "{{ credentials.username }}"
+      name: "Collect Pre Snapshot"
 
     -
       junos_config:
@@ -29,27 +29,27 @@
         host: "{{inventory_hostname}}"
       name: "install users"
 
-#
-  #  - name: Collect Post Snapshot
-  #    junos_jsnapy:
-  #      host: "{{ inventory_hostname }}"
-  #      user: "{{ credentials.username }}"
-  #      passwd: "{{ credentials.password }}"
-  #      action: "snap_post"
-  #      test_files: ../jsnapy/tests/test1.yml
 
-#    - name: Compare snapshots
-#      junos_jsnapy:
-#        host: "{{ inventory_hostname }}"
-#        user: "{{ credentials.username }}"
-#        passwd: "{{ credentials.password }}"
-#        action: "check"
-#        test_files: ../jsnapy/tests/test1.yml
-#      register: test_check
+    - name: Collect Post Snapshot
+      junos_jsnapy:
+        host: "{{ inventory_hostname }}"
+        user: "{{ credentials.username }}"
+        passwd: "{{ credentials.password }}"
+        action: "snap_post"
+        test_files: ../jsnapy/tests/test1.yml
 
-#    - name: Debug jsnapy
-#      debug: 
-#        msg: "{{ test_check }}"
+    - name: Compare snapshots
+      junos_jsnapy:
+        host: "{{ inventory_hostname }}"
+        user: "{{ credentials.username }}"
+        passwd: "{{ credentials.password }}"
+        action: "check"
+        test_files: ../jsnapy/tests/test1.yml
+      register: test_check
+
+    - name: Debug jsnapy
+      debug: 
+        msg: "{{ test_check }}"
 
     # - name: Send Slack notification when jsnapy fails
     #   local_action:
@@ -62,18 +62,18 @@
     #     validate_certs: yes
       # when: test_check.passPercentage != 100
 
- #   - name: Check Users
- #     junos_jsnapy:
- #       host: "{{ inventory_hostname }}"
- #       user: "{{ credentials.username }}"
- #       passwd: "{{ credentials.password }}"
- #       action: "snapcheck"
- #       test_files: ../jsnapy/tests/test2.yml
- #     register: test_check_2
-#
-# #   - name: Debug jsnapy
-# #     debug: 
- #       msg: "{{ test_check_2 }}"      
+   - name: Check Users
+     junos_jsnapy:
+       host: "{{ inventory_hostname }}"
+       user: "{{ credentials.username }}"
+       passwd: "{{ credentials.password }}"
+       action: "snapcheck"
+       test_files: ../jsnapy/tests/test2.yml
+     register: test_check_2
+
+   - name: Debug jsnapy
+     debug: 
+      msg: "{{ test_check_2 }}"      
 
 
   vars_files: 
