@@ -14,7 +14,7 @@ instancias:
    ID: 30
 
 
-loopbacks_nodos_C:
+loopbacks_nodos_c:
  - 
     lo0: 8.8.8.8
  - 
