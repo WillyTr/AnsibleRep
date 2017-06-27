@@ -1,1 +1,28 @@
-
+routing-instances {
+{% for RI in instancias %}
+    VPLS-{{RI.name}} {
+        instance-type vpls;
+        vlan-id none;
+        route-distinguisher {{RI.loopback}}:{{RI.ID}};
+        vrf-target target:{{RI.ID}}:{{RI.ID}};
+        protocols {
+            vpls {
+                no-control-word;
+                site-range 50;
+                no-tunnel-services;
+                site VPLS-{{RI.ID}}-36 {
+                    site-identifier 36;
+                    multi-homing;
+                }
+                vpls-id {{RI.ID}};
+                ignore-encapsulation-mismatch;
+                mesh-group ldp-{{RI.ID}} {
+                    local-switching;
+                    {% for lo0 in loopbacks_nodos_c %}
+                    neighbor lo0.loopb;
+                    {% endfor %}
+                }
+            }
+        }
+    }
+}
