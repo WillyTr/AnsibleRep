@@ -4,17 +4,17 @@ instancias:
    name: node-b-10
    loopback: 6.6.6.6
    ID: 10
-   site_identifier: 2
+   site_identifier: 1
  - 
    name: node-b-20
    loopback: 6.6.6.6
    ID: 20
-   site_identifier: 2
+   site_identifier: 1
  - 
    name: node-b-30
    loopback: 6.6.6.6
    ID: 30
-   site_identifier: 2
+   site_identifier: 1
    
 loopbacks_nodos_c:
  - 
