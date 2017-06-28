@@ -1,1 +1,16 @@
 
+--- 
+- 
+  connection: local
+  gather_facts: false
+  hosts: Nodo-B1
+  roles:
+  - Juniper.junos
+
+  tasks:
+
+    - 
+      template: "src='templates/test.j2' dest='files/test.conf'"
+      
+   vars_files: 
+    - vars/var-test.yml
