@@ -11,13 +11,8 @@ routing-instances {
                 site-range 50;
                 no-tunnel-services;
                 site VPLS-{{RI.ID}}-36 {
-                      {% if {{junos_host}}==12.13.14.7 %}
                     site-identifier 36;
                     multi-homing;
-                    {% endif %}
-                      {% if {{junos_host}}==12.13.14.6 %}
-                    site-identifier 38;
-                    {% endif %}
                 }
                 vpls-id {{RI.ID}};
                 ignore-encapsulation-mismatch;
