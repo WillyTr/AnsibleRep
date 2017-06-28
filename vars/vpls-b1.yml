@@ -16,11 +16,11 @@ instancias:
    ID: 30
    site_identifier: 1
    
- loopbacks_nodos_c:
-  - 
-    loopb: 8.8.8.8
-  -
-    loopb: 9.9.9.9
+loopbacks_nodos_c:
+ - 
+   loopb: 8.8.8.8
+ -
+   loopb: 9.9.9.9
 
 
 
