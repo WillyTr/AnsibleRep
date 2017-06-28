@@ -28,7 +28,21 @@
       
   vars_files: 
     - vars/vpls-b2.yml 
+    
+- 
+  connection: local
+  gather_facts: false
+  hosts: Nodo-B3
+  roles:
+  - Juniper.junos
 
+  tasks:
+    - 
+      template: "src='templates/vpls-b.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
+      
+  vars_files: 
+    - vars/vpls-b3.yml
+    
 #    - 
 #      junos_jsnapy: 
 #        action: snap_pre
