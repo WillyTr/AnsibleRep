@@ -2,14 +2,14 @@
 - 
   connection: local
   gather_facts: false
-  hosts: nodos-c
+  hosts: Nodo-B1
   roles:
   - Juniper.junos
 
   tasks:
 
     - 
-      template: "src='templates/vpls-b.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
+      template: "src='templates/vpls-b1.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
 
 #    - 
 #      junos_jsnapy: 
@@ -77,4 +77,4 @@
 
 
   vars_files: 
-    - vars/vpls-b.yml 
+    - vars/vpls-b1.yml 
