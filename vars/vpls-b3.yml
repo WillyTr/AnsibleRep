@@ -1,0 +1,21 @@
+---
+instancias:
+ - 
+   name: node-b-10
+   loopback: 4.4.4.4
+   ID: 10
+   site_identifier: 3
+ - 
+   name: node-b-20
+   loopback: 4.4.4.4
+   ID: 20
+   site_identifier: 3
+ - 
+   name: node-b-30
+   loopback: 4.4.4.4
+   ID: 30
+   site_identifier: 3
+   
+loopbacks_nodos_c:
+ - 
+   loopb: 5.5.5.5
