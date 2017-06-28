@@ -10,8 +10,8 @@ routing-instances {
                 no-control-word;
                 site-range 50;
                 no-tunnel-services;
-                site VPLS-{{RI.ID}}-36 {
-                    site-identifier 36;
+                site VPLS-{{RI.ID}}-{{RI.site-identifier}} {
+                    site-identifier {{RI.site-identifier}};
                     multi-homing;
                 }
                 vpls-id {{RI.ID}};
