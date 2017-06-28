@@ -2,7 +2,7 @@
 - 
   connection: local
   gather_facts: false
-  hosts: Nodo-B1
+  hosts: nodos-b
   roles:
   - Juniper.junos
 
