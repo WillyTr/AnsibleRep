@@ -21,51 +21,52 @@
       
   vars_files: 
     - vars/vpls-b1.yml 
-    
-- 
-  connection: local
-  gather_facts: false
-  hosts: Nodo-B2
-  roles:
-  - Juniper.junos
 
-  tasks:
-
-    - 
-      template: "src='templates/vpls-b.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
-    -
-      junos_config:
-        provider: "{{credentials}}"
-        src: "files/{{inventory_hostname}}_vpls.conf"
-        src_format: text
-        comment: 'adding vpls'
-        host: "{{junos_host}}"
-      name: "install users" 
-      
-  vars_files: 
-    - vars/vpls-b2.yml 
-    
-- 
-  connection: local
-  gather_facts: false
-  hosts: Nodo-B3
-  roles:
-  - Juniper.junos
-
-  tasks:
-    - 
-      template: "src='templates/vpls-b.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
-    -
-      junos_config:
-        provider: "{{credentials}}"
-        src: "files/{{inventory_hostname}}_vpls.conf"
-        src_format: text
-        comment: 'adding vpls'
-        host: "{{junos_host}}"
-      name: "install users"
-      
-  vars_files: 
-    - vars/vpls-b3.yml
+#    
+#- 
+#  connection: local
+#  gather_facts: false
+#  hosts: Nodo-B2
+#  roles:
+#  - Juniper.junos
+#
+#  tasks:
+#
+#    - 
+#      template: "src='templates/vpls-b.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
+#    -
+#      junos_config:
+#        provider: "{{credentials}}"
+#        src: "files/{{inventory_hostname}}_vpls.conf"
+#        src_format: text
+#        comment: 'adding vpls'
+#        host: "{{junos_host}}"
+#      name: "install users" 
+#      
+#  vars_files: 
+#    - vars/vpls-b2.yml 
+#    
+#- 
+#  connection: local
+#  gather_facts: false
+#  hosts: Nodo-B3
+#  roles:
+#  - Juniper.junos
+#
+#  tasks:
+#    - 
+#      template: "src='templates/vpls-b.j2' dest='files/{{inventory_hostname}}_vpls.conf'"
+#    -
+#      junos_config:
+#        provider: "{{credentials}}"
+#        src: "files/{{inventory_hostname}}_vpls.conf"
+#        src_format: text
+#        comment: 'adding vpls'
+#        host: "{{junos_host}}"
+#      name: "install users"
+#      
+#  vars_files: 
+#    - vars/vpls-b3.yml
     
 #    - 
 #      junos_jsnapy: 
